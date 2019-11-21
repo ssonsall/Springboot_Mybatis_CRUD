@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--mapper의 용도 : 쿼리문을 다 적어놓고 Name을 다 걸어두고 그 Name으로 쿼리문을 실행할 수 있다. -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.PersonRepository">
+	<select id="findById" resultType="com.example.demo.model.Person">
+		SELECT * FROM person WHERE id = #{id}
+	</select>
+	
+	<insert id="save">
+		INSERT INTO person VALUES(#{id},#{name})
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM person WHERE id = #{id}
+	</delete>
+	
+	<update id="update">
+		UPDATE person SET name = #{name} WHERE id = #{id}
+	</update>
+</mapper>

@@ -1,0 +1,14 @@
+#Space 규칙
+server:
+  port: 8080
+  servlet:    context-path: /
+    
+#main 밑에 jsp 파일 찾기 위한 설정. webapp 폴더명은 무조건 webapp이어야 함. webcontent같이 디폴트명이고 이렇게 적으면 알아서 찾음.    
+spring:  mvc:    view:      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  #mysql connection 세팅.   
+  datasource:    url: jdbc:mysql://localhost:3306/cos?serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: cos
+    password: Bitc5600!
